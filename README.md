@@ -63,6 +63,22 @@ python3 generate_bans_summary.py --help
 python3 plot_bans.py --help
 ```
 
+## Extending default log history
+
+Since the scripts rely on Fail2Ban logs, which by default keep ~4 weeks of
+history via logrotate, you may want to increase the retention period (e.g. to
+1 year) by adjusting `/etc/logrotate.d/fail2ban`, for example replacing:
+
+```
+    rotate 4
+```
+
+with:
+
+```
+    rotate 52
+```
+
 ## License
 
 MIT
